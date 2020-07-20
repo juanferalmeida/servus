@@ -94,10 +94,11 @@ public class LoginSQL
 			   PreparedStatement ps = null;
 				 ps = connection.prepareStatement( "UPDATE Login  SET  code = ?, active = ?, userId = ?   WHERE mail = ? ;" );
 
-				ps.setString(1, log.getMail());
-				ps.setString (2, log.getCode());
-				ps.setBoolean(3, log.isActive());
-				ps.setString(4, log.getUserId());
+				ps.setString (1, log.getCode());
+				ps.setBoolean(2, log.isActive());
+				ps.setString(3, log.getUserId());
+				ps.setString(4, log.getMail());
+
 			
 				ps.executeUpdate();
 

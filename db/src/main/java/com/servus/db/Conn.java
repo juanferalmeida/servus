@@ -12,7 +12,7 @@ public class Conn
     {
         try
         {
-            connection = DriverManager.getConnection( "jdbc:mysql://localhost:3306/serdb", "ser", "ser" );
+            connection = DriverManager.getConnection( "jdbc:mysql://localhost:3306/serdb?serverTimezone=UTC", "ser", "ser" );
             System.out.println( "conectado.." );
         }
         catch( SQLException e )

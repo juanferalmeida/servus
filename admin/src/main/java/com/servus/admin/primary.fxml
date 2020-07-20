@@ -25,7 +25,9 @@
       <Text layoutX="71.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code" />
       <TextField fx:id="tUserId" layoutX="67.0" layoutY="277.0" />
       <Text layoutX="71.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserId" />
-      <Button fx:id="bSave" layoutX="41.0" layoutY="412.0" mnemonicParsing="false" onAction="#SAVELOGIN" text="SAVE" />
-      <Button fx:id="bDelete" layoutX="190.0" layoutY="412.0" mnemonicParsing="false" onAction="#DELETELOGIN" text="DELETE" />
+      <Button fx:id="bSave" layoutX="41.0" layoutY="412.0" mnemonicParsing="false" onAction="#SAVELOGIN" prefHeight="25.0" prefWidth="59.0" text="SAVE" />
+      <Button fx:id="bDelete" layoutX="231.0" layoutY="445.0" mnemonicParsing="false" onAction="#DELETELOGIN" prefHeight="25.0" prefWidth="59.0" text="DELETE" />
+      <Button fx:id="bUpdate" layoutX="105.0" layoutY="412.0" mnemonicParsing="false" onAction="#UPDATELOGIN" text="UPDATE" />
+      <Button fx:id="bClear" layoutX="231.0" layoutY="35.0" mnemonicParsing="false" onAction="#CLEARLOGIN" prefHeight="25.0" prefWidth="59.0" text="CLEAR" />
    </children>
 </Pane>
