@@ -14,6 +14,26 @@ public class Service {
 	String map; 
 	Boolean available;
 	
+	public Service(Integer serviceId, String adminId, String serviceType, String name, String description,
+			String mobile, String country, String city, String address, String map, Boolean available) {
+		this.serviceId = serviceId;
+		this.adminId = adminId;
+		this.serviceType = serviceType;
+		this.name = name;
+		this.description = description;
+		this.mobile = mobile;
+		this.country = country;
+		this.city = city;
+		this.address = address;
+		this.map = map;
+		this.available = available;
+	}
+	
+	
+	public Service() {
+	}
+
+
 	public Integer getServiceId() {
 		return serviceId;
 	}
@@ -79,6 +99,12 @@ public class Service {
 	}
 	public void setAvailable(Boolean available) {
 		this.available = available;
+	}
+
+
+	public void getServiceId(Integer id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

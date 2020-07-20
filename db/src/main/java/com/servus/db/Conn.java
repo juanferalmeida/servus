@@ -10,14 +10,9 @@ public class Conn
 
     public Conn()
     {
-    	  String bd = "serdb";
-          String login = "root";
-          String password = "root";
-          String url = "jdbc:mysql://localhost:3306/" + bd + "?serverTimezone=UTC";
-
         try
         {
-            connection = DriverManager.getConnection( url,login,password );
+            connection = DriverManager.getConnection( "jdbc:mysql://localhost:3306/serdb", "ser", "ser" );
             System.out.println( "conectado.." );
         }
         catch( SQLException e )

@@ -4,9 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.servus.db.Conn;
 import com.servus.db.Login;
+
 
 public class LoginSQL
 {
@@ -14,6 +17,34 @@ public class LoginSQL
       Connection connection = conn.getConnection();
       
       
+  	public Set<Login> consultLogin() throws SQLException {
+		Set<Login> listLogin = new HashSet<>();
+		if (connection != null) {
+			PreparedStatement ps = null;
+			ResultSet rs = null;
+			
+				ps = connection.prepareStatement("SELECT mail,code,active,userId FROM Login");
+				rs = ps.executeQuery();
+				while (rs.next()) {
+					Login lg = new Login();
+					lg.setMail(rs.getString("mail"));
+					lg.setCode(rs.getString("code"));
+
+					lg.setActive( rs.getBoolean( "active" ) );
+
+	                lg.setUserId( rs.getString( "userId" ) );
+
+					
+					listLogin.add(lg);
+				   }
+        }
+        return listLogin;
+        
+    }
+    	 
+    	 
+    	 
+ 
     public Login getUser( String mail ) throws SQLException
     {
         Login login = null;
@@ -61,7 +92,7 @@ public class LoginSQL
 		boolean modify = false;
 		if (connection != null) {
 			   PreparedStatement ps = null;
-				 ps = connection.prepareStatement( "UPDATE   Login  SET  code = ?, active = ?, userId = ?   WHERE mail = ? ;" );
+				 ps = connection.prepareStatement( "UPDATE Login  SET  code = ?, active = ?, userId = ?   WHERE mail = ? ;" );
 
 				ps.setString(1, log.getMail());
 				ps.setString (2, log.getCode());
@@ -76,13 +107,13 @@ public class LoginSQL
 		return modify;
 	}
 
-	public boolean deleteLogin(String mail) throws SQLException {
+	public boolean deleteLogin(Login login) throws SQLException {
 		boolean delete = false;
 
 		if (connection != null) {
 			   PreparedStatement ps = null;
-				ps = connection.prepareStatement("DELETE FROM DetallePacks WHERE mail = ? ;");
-				ps.setString(1, mail);
+				ps = connection.prepareStatement("DELETE FROM Login WHERE mail = ? ;");
+				ps.setString(1, login.getMail());
 				ps.executeUpdate();
 				delete = true;
 			

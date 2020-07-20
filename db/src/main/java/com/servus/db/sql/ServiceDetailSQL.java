@@ -13,7 +13,7 @@ public class ServiceDetailSQL {
     Connection connection = conn.getConnection();
     
     
-  public ServiceDetail getServiceDetail( int serviceId ) throws SQLException
+  public ServiceDetail getServiceDetail( int serviceId , int itemId) throws SQLException
   {
 	  ServiceDetail servicedetail = null;
     
@@ -21,8 +21,10 @@ public class ServiceDetailSQL {
       {
           PreparedStatement ps = null;
           ResultSet rs = null;
-          ps = connection.prepareStatement( "SELECT * FROM ServiceDetail WHERE serviceId = ? and item = ? ; " );
+          ps = connection.prepareStatement( "SELECT * FROM ServiceDetail WHERE serviceId = ? and itemId = ? ; " );
           ps.setInt( 1, serviceId );
+          ps.setInt( 2, itemId );
+
           rs = ps.executeQuery();
           while( rs.next() )
           {

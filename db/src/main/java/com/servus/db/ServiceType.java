@@ -3,6 +3,17 @@ package com.servus.db;
 public class ServiceType {
 	String serviceType;
 	String name;
+	
+	
+	
+	public ServiceType(String serviceType, String name) {
+		this.serviceType = serviceType;
+		this.name = name;
+	}
+	
+	public ServiceType() {
+	}
+
 	public String getServiceType() {
 		return serviceType;
 	}

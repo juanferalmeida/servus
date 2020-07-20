@@ -108,7 +108,7 @@ public class ServiceSQL {
 
 		if (connection != null) {
 			   PreparedStatement ps = null;
-				ps = connection.prepareStatement("DELETE FROM Service WHERE serviceId = ?; ");
+				ps = connection.prepareStatement("DELETE FROM Service WHERE serviceId = ? ; ");
 				ps.setInt(1, serviceId);
 				ps.executeUpdate();
 				delete = true;

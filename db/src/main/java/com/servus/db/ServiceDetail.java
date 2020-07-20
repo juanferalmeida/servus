@@ -6,6 +6,24 @@ public class ServiceDetail {
 	String name;
 	String value;
 	
+	
+	
+	
+	
+	public ServiceDetail(Integer serviceId, Integer itemId, String name, String value) {
+		this.serviceId = serviceId;
+		this.itemId = itemId;
+		this.name = name;
+		this.value = value;
+	}
+	
+	
+	
+	public ServiceDetail() {
+	}
+
+
+
 	public Integer getServiceId() {
 		return serviceId;
 	}

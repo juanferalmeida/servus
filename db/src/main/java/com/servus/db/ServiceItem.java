@@ -5,6 +5,15 @@ String serviceType;
 Integer itemId;
 String name;
 
+public ServiceItem(String serviceType, Integer itemId, String name) {
+	this.serviceType = serviceType;
+	this.itemId = itemId;
+	this.name = name;
+}
+
+public ServiceItem() {
+}
+
 public String getServiceType() {
 	return serviceType;
 }

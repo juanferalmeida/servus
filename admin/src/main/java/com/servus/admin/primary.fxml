@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.servus.admin.PrimaryController">
+   <children>
+      <TableView fx:id="tableLogin" layoutX="324.0" onMouseClicked="#SELECTLOGIN" prefHeight="520.0" prefWidth="576.0">
+        <columns>
+          <TableColumn fx:id="columnMail" prefWidth="144.0" text="Mail" />
+          <TableColumn fx:id="columnCode" prefWidth="144.0" text="Code" />
+            <TableColumn fx:id="columnActive" prefWidth="144.0" text="Active" />
+            <TableColumn fx:id="columnUserId" prefWidth="143.199951171875" text="UserID" />
+        </columns>
+      </TableView>
+      <TextField fx:id="tMail" layoutX="67.0" layoutY="89.0" />
+      <TextField fx:id="tCode" layoutX="67.0" layoutY="162.0" />
+      <CheckBox fx:id="cActive" layoutX="68.0" layoutY="212.0" mnemonicParsing="false" text="Active" />
+      <Text layoutX="68.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <Text layoutX="71.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code" />
+      <TextField fx:id="tUserId" layoutX="67.0" layoutY="277.0" />
+      <Text layoutX="71.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserId" />
+      <Button fx:id="bSave" layoutX="41.0" layoutY="412.0" mnemonicParsing="false" onAction="#SAVELOGIN" text="SAVE" />
+      <Button fx:id="bDelete" layoutX="190.0" layoutY="412.0" mnemonicParsing="false" onAction="#DELETELOGIN" text="DELETE" />
+   </children>
+</Pane>

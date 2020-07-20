@@ -13,7 +13,7 @@ public class ServiceItemSQL {
     Connection connection = conn.getConnection();
     
     
-  public ServiceItem getServiceItem( String serviceType ) throws SQLException
+  public ServiceItem getServiceItem( String serviceType, Integer itemId ) throws SQLException
   {
 	  ServiceItem serviceitem = null;
     
@@ -23,6 +23,8 @@ public class ServiceItemSQL {
           ResultSet rs = null;
           ps = connection.prepareStatement( "SELECT * FROM ServiceItem WHERE serviceType = ? and itemId = ? ;" );
           ps.setString( 1, serviceType );
+          ps.setInt( 2, itemId );
+
           rs = ps.executeQuery();
           while( rs.next() )
           {
@@ -78,13 +80,13 @@ public class ServiceItemSQL {
 		return modify;
 	}
 
-	public boolean delete(int serviceId, int itemId) throws SQLException {
+	public boolean delete(String serviceType, int itemId) throws SQLException {
 		boolean delete = false;
 
 		if (connection != null) {
 			   PreparedStatement ps = null;
-				ps = connection.prepareStatement("DELETE FROM ServiceItem WHERE serviceId = ? AND itemId = ?");
-				ps.setInt(1, serviceId);
+				ps = connection.prepareStatement("DELETE FROM ServiceItem WHERE serviceType = ? AND itemId = ?");
+				ps.setString(1, serviceType);
 				ps.setInt(2, itemId);
 
 				ps.executeUpdate();

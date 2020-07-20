@@ -16,7 +16,7 @@ public class SignOn
 
         LoginSQL loginSQL = new LoginSQL();
         String mail = "juan@gmail.com";
-        String code = "12345";
+        String code = "12345iy";
         Login user = null;
         Result resultOK = new Result("OK", "Acces Granted", mail);
         Result resultNoExist = new Result("Error", "This User Does Not Exist!", mail);

@@ -51,7 +51,7 @@ public class PersonSQL
 		
 		if (connection != null) {
 			   PreparedStatement ps = null;
-			 ps = connection.prepareStatement( "INSERT INTO Persons (userId, type, name, mobile, country, city, address, map, birthday) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ? ) ;");
+			 ps = connection.prepareStatement( "INSERT INTO Person (userId, type, name, mobile, country, city, address, map, birthday) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ? ) ;");
 			
 				ps.setString(1, pers.getUserId());
 				ps.setString(2, pers.getType());

@@ -14,6 +14,20 @@ public class Person
 	String map;
 LocalDate  birthday;
 
+public Person() {
+}
+public Person(String userId, String type, String name, String mobile, String country, String city, String address,
+		String map, LocalDate birthday) {
+	this.userId = userId;
+	this.type = type;
+	this.name = name;
+	this.mobile = mobile;
+	this.country = country;
+	this.city = city;
+	this.address = address;
+	this.map = map;
+	this.birthday = birthday;
+}
 public String getUserId() {
 	return userId;
 }

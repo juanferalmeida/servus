@@ -12,6 +12,30 @@ public class Reserve {
 	LocalTime  reserveEnd;
 	String status;
 	int  score;
+	
+	
+	
+	public Reserve(Integer reserveId, String userId, Integer serviceId, LocalDate reserveDate, LocalTime reserveStart,
+			LocalTime reserveEnd, String status, int score) {
+		this.reserveId = reserveId;
+		this.userId = userId;
+		this.serviceId = serviceId;
+		this.reserveDate = reserveDate;
+		this.reserveStart = reserveStart;
+		this.reserveEnd = reserveEnd;
+		this.status = status;
+		this.score = score;
+	}
+	
+	
+	
+	
+	public Reserve() {
+	}
+
+
+
+
 	public Integer getReserveId() {
 		return reserveId;
 	}

@@ -21,7 +21,7 @@ public class ServiceTypeSQL {
       {
           PreparedStatement ps = null;
           ResultSet rs = null;
-          ps = connection.prepareStatement( "SELECT * FROM ServiceItem WHERE serviceType = ?" );
+          ps = connection.prepareStatement( "SELECT * FROM servicetype WHERE serviceType = ? ;" );
           ps.setString( 1, serviceType );
           rs = ps.executeQuery();
           while( rs.next() )
@@ -61,7 +61,7 @@ public class ServiceTypeSQL {
 		boolean modify = false;
 		if (connection != null) {
 			   PreparedStatement ps = null;
-				 ps = connection.prepareStatement( "UPDATE   ServiceItem  SET  name = ? WHERE serviceType = ?;" );
+				 ps = connection.prepareStatement( "UPDATE ServiceType  SET  name = ? WHERE serviceType = ? ;" );
 
 					ps.setString(1, servicetype.getServiceType());
 					ps.setString(2, servicetype.getName());
