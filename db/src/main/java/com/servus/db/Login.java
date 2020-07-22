@@ -8,15 +8,14 @@
 
 package com.servus.db;
 
-public class Login
-{
-    String mail;
-    String code;
-    Boolean active;
-    String userId;
+public class Login {
+	String mail;
+	String code;
+	Boolean active;
+	String userId;
 
-    public Login() {
-		
+	public Login() {
+
 	}
 
 	public Login(String mail, String code, Boolean active, String userId) {
@@ -27,44 +26,36 @@ public class Login
 		this.userId = userId;
 	}
 
-	public String getMail()
-    {
-        return mail;
-    }
+	public String getMail() {
+		return mail;
+	}
 
-    public void setMail( String aMail )
-    {
-        mail = aMail;
-    }
+	public void setMail(String aMail) {
+		mail = aMail;
+	}
 
-    public String getCode()
-    {
-        return code;
-    }
+	public String getCode() {
+		return code;
+	}
 
-    public void setCode( String aCode )
-    {
-        code = aCode;
-    }
+	public void setCode(String aCode) {
+		code = aCode;
+	}
 
-    public Boolean isActive()
-    {
-        return active;
-    }
+	public Boolean isActive() {
+		return active;
+	}
 
-    public void setActive( Boolean aActive )
-    {
-        active = aActive;
-    }
+	public void setActive(Boolean aActive) {
+		active = aActive;
+	}
 
-    public String getUserId()
-    {
-        return userId;
-    }
+	public String getUserId() {
+		return userId;
+	}
 
-    public void setUserId( String aUserId )
-    {
-        userId = aUserId;
-    }
+	public void setUserId(String aUserId) {
+		userId = aUserId;
+	}
 
 }

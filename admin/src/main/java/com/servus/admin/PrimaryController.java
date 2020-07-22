@@ -2,7 +2,6 @@ package com.servus.admin;
 
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -44,7 +43,7 @@ public class PrimaryController implements Initializable {
 	private CheckBox cActive;
 	@FXML
 	private TextField tUserId;
-	
+
 	@FXML
 	private Button bSave;
 	@FXML
@@ -130,8 +129,7 @@ public class PrimaryController implements Initializable {
 		}
 		clear();
 		loadFormulary();
-		
-		
+
 	}
 
 	@FXML
@@ -139,13 +137,13 @@ public class PrimaryController implements Initializable {
 		try {
 			loginselect = tableLogin.getSelectionModel().getSelectedItem();
 			if (loginselect != null) {
-			tMail.setText(loginselect.getMail());
-			tCode.setText(loginselect.getCode());
-			cActive.setSelected(loginselect.isActive());
-			tUserId.setText(loginselect.getUserId());
+				tMail.setText(loginselect.getMail());
+				tCode.setText(loginselect.getCode());
+				cActive.setSelected(loginselect.isActive());
+				tUserId.setText(loginselect.getUserId());
 			}
 		} catch (NullPointerException e) {
-			
+
 			e.printStackTrace();
 		}
 
@@ -153,9 +151,8 @@ public class PrimaryController implements Initializable {
 
 	@FXML
 	private void DELETELOGIN(ActionEvent event) {
-		  bd_lg = new LoginSQL();
+		bd_lg = new LoginSQL();
 
-		
 		if (loginselect != null) {
 
 			alerta = new Alert(Alert.AlertType.CONFIRMATION);
@@ -169,7 +166,7 @@ public class PrimaryController implements Initializable {
 
 				try {
 					bd_lg.deleteLogin(loginselect);
-					
+
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -180,13 +177,11 @@ public class PrimaryController implements Initializable {
 			}
 		}
 	}
-	
 
 	@FXML
 	private void UPDATELOGIN(ActionEvent event) {
-		  bd_lg = new LoginSQL();
+		bd_lg = new LoginSQL();
 
-		
 		if (loginselect != null) {
 
 			alerta = new Alert(Alert.AlertType.CONFIRMATION);
@@ -200,7 +195,7 @@ public class PrimaryController implements Initializable {
 
 				try {
 					bd_lg.modifyLogin(loginselect);
-					
+
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
@@ -209,21 +204,20 @@ public class PrimaryController implements Initializable {
 			}
 		}
 	}
+
 	@FXML
 	private void CLEARLOGIN(ActionEvent event) {
 		clear();
-		
+
 	}
+
 	private void clear() {
-		
+
 		tMail.clear();
 		tCode.clear();
 		cActive.setSelected(false);
 		tUserId.clear();
-		
-		
-		
-		
+
 	}
-	
+
 }

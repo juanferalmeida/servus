@@ -1,0 +1,1 @@
+java -jar payara-micro-5.2020.3.jar /target/webservice-1.0-SNAPSHOT.war

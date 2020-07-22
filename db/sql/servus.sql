@@ -11,10 +11,6 @@ CREATE TABLE PERSON (
   type VARCHAR(1) NOT NULL CHECK(type='A' OR type='C'),
   name VARCHAR(80) NOT NULL,
   mobile VARCHAR(20) NOT NULL,
-  country VARCHAR(2) NOT NULL,
-  city VARCHAR(20),
-  address VARCHAR(80),
-  map VARCHAR(200),
   birthday DATE,
   PRIMARY KEY (userId),
   FOREIGN KEY (userId) REFERENCES LOGIN (userId)  
@@ -26,38 +22,22 @@ CREATE TABLE SERVICETYPE (
   PRIMARY KEY (serviceType)
 );
 
-CREATE TABLE SERVICEITEM (
-  serviceType VARCHAR(20) NOT NULL,
-  itemId SMALLINT NOT NULL,
-  name VARCHAR(80) NOT NULL,
-  PRIMARY KEY (serviceType, itemId),
-  FOREIGN KEY (serviceType) REFERENCES SERVICETYPE (serviceType)
-);
-
 CREATE TABLE SERVICE (
   serviceId INT NOT NULL AUTO_INCREMENT,
-  adminId VARCHAR(80) NOT NULL,
+  userId VARCHAR(80) NOT NULL,
   serviceType VARCHAR(20) NOT NULL,
   name VARCHAR(80) NOT NULL,
   description VARCHAR(200) NOT NULL,
-  mobile VARCHAR(20) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
   country VARCHAR(2) NOT NULL,
   city VARCHAR(20),
   address VARCHAR(80),
   map VARCHAR(200),
   available BOOLEAN NOT NULL,
+  price DECIMAL(5,2) NOT NULL,
   PRIMARY KEY (serviceId),
-  FOREIGN KEY (adminId) REFERENCES PERSON (userId),
+  FOREIGN KEY (userId) REFERENCES PERSON (userId),
   FOREIGN KEY (serviceType) REFERENCES SERVICETYPE (serviceType)
-);
-
-CREATE TABLE SERVICEDETAIL (
-  serviceId INT NOT NULL,
-  itemId SMALLINT NOT NULL,
-  name VARCHAR(80) NOT NULL,
-  value VARCHAR(80) NOT NULL,
-  PRIMARY KEY (serviceId, itemId),
-  FOREIGN KEY (serviceId) REFERENCES SERVICE (serviceId)
 );
 
 CREATE TABLE RESERVE (
